@@ -1,0 +1,19 @@
+.details {
+    padding: 0px 12px 20px 12px;
+}
+
+.details img {
+    float: left;
+    margin-right: 12px;
+}
+
+.list {
+    clear: both;
+}
+
+.error-messages { transition:1s linear all; }
+.message { transition:1s linear all; }
+.message.ng-active{ transition:1s linear all; opacity:1; }
+.message.ng-inactive { transition:1s linear all; opacity:0; } 
+.message.ng-leave { transition:0.5s linear all; } 
+.message.ng-leave.ng-leave-active { opacity:0; }

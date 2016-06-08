@@ -1,0 +1,18 @@
+<ion-view>
+    <ion-nav-title>{{contact.firstName + ' ' + contact.lastName}}</ion-nav-title>
+    <ion-content has-header="true" padding="true">
+        <div class="details">
+            <img ng-src="./img/{{::contact.pic}}" width="100" height="100" />
+            <h4>{{ contact.firstName }} {{ contact.lastName }}</h4>
+            <p>{{ contact.title }}<br/> {{ contact.city }}</p>
+        </div>
+        <div class="list card">
+            <a class="item item-icon-left" ui-sref="root.contact-detail(::{ id: contact.managerId })" ng-if="contact.managerId > 0"><i class="icon ion-person"></i>View Manager<p>{{contact.managerName}}</p></a>
+            <a class="item item-icon-left" ui-sref="root.contact-reports(::{ id: contact.id })" ng-if="contact.reports > 0"><i class="icon ion-person-stalker"></i>View Direct Reports<p>{{contact.reports}}</p></a>
+            <a class="item item-icon-left" ng-href="tel:{{contact.officePhone}}"><i class="icon ion-iphone"></i>Call Office<p>{{contact.officePhone}}</p></a>
+            <a class="item item-icon-left" ng-href="tel:{{contact.cellPhone}}"><i class="icon ion-ios-telephone"></i>Call Cell<p>{{contact.cellPhone}}</p></a>
+            <a class="item item-icon-left" ng-href="sms:{{contact.cellPhone}}"><i class="icon ion-chatbox-working"></i>SMS<p>{{contact.cellPhone}}</p></a>
+            <a class="item item-icon-left" ng-href="mailto:{{contact.email}}"><i class="icon ion-email"></i>Email<p>{{contact.email}}</p></a>
+        </div>
+    </ion-content>
+</ion-view>

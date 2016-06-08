@@ -1,0 +1,31 @@
+<ion-modal-view>
+  <ion-header-bar class="bar bar-header bar-positive">
+    <h1 class="title">New Contact</h1>
+    <button class="button button-clear button-primary" ng-click="closeModal()">Cancel</button>
+  </ion-header-bar>
+  <ion-content class="padding">
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+              <span class="input-label">First Name</span>
+              <input ng-model="contactEditCtrl.contact.firstName" type="text">
+            </label>
+      <label class="item item-input item-stacked-label">
+              <span class="input-label">Last Name</span>
+              <input class="form-control" ng-model="contactEditCtrl.contact.lastName" type="text">
+            </label>
+      <label class="item item-input item-stacked-label">
+              <span class="input-label">Email</span>
+              <input class="form-control" ng-model="contactEditCtrl.contact.email" type="email">
+            </label>
+      <label class="item item-input item-select">
+              <span class="input-label">Select Manager</span>
+              <select name="managerSelection" ng-model="contactEditCtrl.contact.managerId">
+                <option ng-repeat="manager in contactEditCtrl.contacts" ng-show="contactEditCtrl.contact.id != manager.id" 
+                  ng-selected="contactEditCtrl.contact.managerId == manager.id" value="{{manager.id}}">
+                  {{manager.firstName + " " + manager.lastName}}</option>
+              </select>
+      </label>
+      <button class="button button-full button-positive" ng-click="contactEditCtrl.save()">Save Edits</button>
+    </div>
+  </ion-content>
+</ion-modal-view>

@@ -1,0 +1,11 @@
+<ion-view>
+    <ion-nav-title>{{'ui.direct-reports.title' | translate}}</ion-nav-title>
+    <ion-content has-header="true">
+        <ion-list>
+            <ion-item ng-repeat="contact in contactReportsCtrl.contacts" type="item-text-wrap" ui-sref="root.contact-detail(::{ id: contact.id })">
+                <h3>{{contact.firstName}} {{contact.lastName}}</h3>
+                <p>{{contact.title}}</p>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
